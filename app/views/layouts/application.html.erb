@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZooluApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>줄루</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_pack_tag @app if @app %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'header' %>
+  	<main class='mb-3 py-5'>
+  		<%= yield %>
+  	</main>
+  	<%= render 'footer' %>
+    <%= javascript_pack_tag @app if @app %>
   </body>
 </html>
